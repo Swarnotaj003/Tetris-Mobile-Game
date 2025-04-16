@@ -14,8 +14,7 @@ You can download the APK file to install the application on your Android device:
 ## App Preview
 Gameplay    |  Game over |
 ------------|------------|
-![image](https://github.com/user-attachments/assets/32f7cbf5-54a6-4f23-b2c9-4c03343bb88c)|![image](https://github.com/user-attachments/assets/f6847704-d910-428f-ad45-a476ca28aeef)
-
+![image](https://github.com/user-attachments/assets/1beae34e-1256-4e02-8e2e-5dbf7c1cf24e)|![image](https://github.com/user-attachments/assets/aadd9edb-c65c-4694-9161-f6ba8ee66e72)
 
 ## Getting Started
 
