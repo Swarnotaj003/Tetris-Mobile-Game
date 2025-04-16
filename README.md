@@ -9,11 +9,13 @@ The objective of this project is to build a fully functional `mobile game` using
 You can download the APK file to install the application on your Android device:
 > This will require **granting permission** to *install apps from unknown sources*
 
-[**Download APK**]()
+[**Download APK**](https://github.com/Swarnotaj003/Tetris-Mobile-Game/releases/download/v1.0/app-release.apk)
 
 ## App Preview
-Game starts |   Scoring  |  Game over |
-------------|------------|------------|
+Gameplay    |  Game over |
+------------|------------|
+![image](https://github.com/user-attachments/assets/32f7cbf5-54a6-4f23-b2c9-4c03343bb88c)|![image](https://github.com/user-attachments/assets/f6847704-d910-428f-ad45-a476ca28aeef)
+
 
 ## Getting Started
 
