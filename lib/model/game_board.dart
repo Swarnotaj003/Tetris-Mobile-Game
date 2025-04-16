@@ -233,6 +233,12 @@ class _GameBoardState extends State<GameBoard> {
         backgroundColor: Colors.black,
         title: Text('T E T R I S', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
         centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: resetGame,
+            icon: Icon(Icons.restart_alt, color: Colors.white, size: 28),
+          ),
+        ],
       ),
 
       body: Column(
@@ -280,7 +286,7 @@ class _GameBoardState extends State<GameBoard> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 IconButton(
-                  onPressed: moveLeft,
+                  onPressed: gameOver ? null : moveLeft,
                   icon: Icon(
                     Icons.arrow_back_ios,
                     color: Colors.grey,
@@ -288,11 +294,15 @@ class _GameBoardState extends State<GameBoard> {
                   ),
                 ),
                 IconButton(
-                  onPressed: rotatePiece,
-                  icon: Icon(Icons.rotate_right, color: Colors.grey, size: 32),
+                  onPressed: gameOver ? null : rotatePiece,
+                  icon: Icon(
+                    Icons.rotate_right, 
+                    color: Colors.grey, 
+                    size: 32
+                  ),
                 ),
                 IconButton(
-                  onPressed: moveRight,
+                  onPressed: gameOver ? null : moveRight,
                   icon: Icon(
                     Icons.arrow_forward_ios,
                     color: Colors.grey,
