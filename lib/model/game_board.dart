@@ -45,6 +45,9 @@ class _GameBoardState extends State<GameBoard> {
   // Game status
   bool gameOver = false;
 
+  // Game timer
+  Timer? gameTimer;
+
   @override
   void initState() {
     super.initState();
@@ -62,7 +65,11 @@ class _GameBoardState extends State<GameBoard> {
 
   // 2) Loop
   void gameLoop(Duration frameRate) {
-    Timer.periodic(frameRate, (timer) {
+    // Stop the previous timer if any
+    gameTimer?.cancel();
+
+    // Use timer for periodic game activity
+    gameTimer = Timer.periodic(frameRate, (timer) {
       setState(() {
         // Clear filled rows if any
         clearLines();
@@ -76,11 +83,10 @@ class _GameBoardState extends State<GameBoard> {
           // GAME OVER MESSAGE
           showDialog(
             context: context,
-            builder:
-                (context) => GameOverDialog(
-                  score: currentScore.toString(),
-                  restart: resetGame,
-                ),
+            builder: (context) => GameOverDialog(
+              score: currentScore.toString(),
+              restart: resetGame,
+            ),
           );
         }
 
@@ -231,12 +237,15 @@ class _GameBoardState extends State<GameBoard> {
 
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text('T E T R I S', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+        title: Text(
+          'T E T R I S',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold,),
+        ),
         centerTitle: true,
         actions: [
           IconButton(
             onPressed: resetGame,
-            icon: Icon(Icons.restart_alt, color: Colors.white, size: 28),
+            icon: Icon(Icons.replay, color: Colors.white, size: 28),
           ),
         ],
       ),
@@ -274,8 +283,8 @@ class _GameBoardState extends State<GameBoard> {
             'S C O R E : $currentScore',
             style: TextStyle(
               color: Colors.white,
-              fontSize: 20,
-             
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
             ),
           ),
 
@@ -289,24 +298,24 @@ class _GameBoardState extends State<GameBoard> {
                   onPressed: gameOver ? null : moveLeft,
                   icon: Icon(
                     Icons.arrow_back_ios,
-                    color: Colors.grey,
-                    size: 32,
+                    color: Colors.white,
+                    size: 40,
                   ),
                 ),
                 IconButton(
                   onPressed: gameOver ? null : rotatePiece,
                   icon: Icon(
                     Icons.rotate_right, 
-                    color: Colors.grey, 
-                    size: 32
+                    color: Colors.white, 
+                    size: 40,
                   ),
                 ),
                 IconButton(
                   onPressed: gameOver ? null : moveRight,
                   icon: Icon(
                     Icons.arrow_forward_ios,
-                    color: Colors.grey,
-                    size: 32,
+                    color: Colors.white,
+                    size: 40,
                   ),
                 ),
               ],
